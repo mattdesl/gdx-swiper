@@ -6,7 +6,10 @@ The tutorial can be seen here:
 https://github.com/mattdesl/lwjgl-basics/wiki/LibGDX-Finger-Swipe
 
 Note that, since writing this, I have been developing a more efficient and more robust line rendering system. 
-By using a shader, we only need one triangle strip per line. The shader also allows us to create the anti-aliasing
+By using a shader, we only need one triangle strip per line. Alternatively, triangles can be used to batch
+multiple lines. 
+
+The shader also allows us to create the anti-aliasing
 and stroke based on the line width (so its completely scalable). We do this by giving one edge of vertices a texcoord of
 1.0, and the other edge a texcoord of -1.0. Then, in the fragment shader, we use abs() to ensure that the gradient goes from 0.0
 (outer edges) to 1.0 (center of line). 
